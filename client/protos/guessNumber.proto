@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package guessNumber;
+
+// Definicion del servicio para validar el numero
+service Greeter {
+  // RPC donde el cliente envía el número al servidor usando el stub y espera una respuesta
+  rpc ValidateNumber (NumRequest) returns (NumReply) {}
+}
+
+// Contiene el mensaje de solicitud de validación del número
+message NumRequest {
+  string num = 1;
+  string port = 2;
+}
+
+// Contiene la respuesta luego de que se ha validado el número
+message NumReply {
+  string message = 1;
+  string status = 2;
+}
